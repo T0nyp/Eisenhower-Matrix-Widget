@@ -79,7 +79,10 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-40 py-6" style={{ backgroundColor: '#FCE7F3', fontFamily: 'Poppins, sans-serif' }}>
+    <div 
+  className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6" 
+  style={{ backgroundColor: '#FCE7F3', fontFamily: 'Poppins, sans-serif', boxSizing: 'border-box' }}
+>
       <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: '#333333' }}>Build Your Own Eisenhower Matrix</h1>
 
       <div className="flex gap-2 mb-8 w-full max-w-2xl">
