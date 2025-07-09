@@ -79,8 +79,8 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6" style={{ backgroundColor: '#FCE7F3', fontFamily: 'Poppins, sans-serif' }}>
-      <h1 className="text-4xl font-bold mb-8" style={{ color: '#333333' }}>Build Your Own Eisenhower Matrix</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center px-40 py-6" style={{ backgroundColor: '#FCE7F3', fontFamily: 'Poppins, sans-serif' }}>
+      <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: '#333333' }}>Build Your Own Eisenhower Matrix</h1>
 
       <div className="flex gap-2 mb-8 w-full max-w-2xl">
         <input
@@ -151,15 +151,14 @@ export function App() {
         </div>
       </DragDropContext>
       <motion.button
-  className="bg-indigo-600 text-white px-6 py-3 rounded-lg mt-8 transition-colors duration-300"
-  style={{ backgroundColor: '#5562EB' }}
-  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C2CAF9'}
-  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5562EB'}
-  onClick={() => window.open('https://app.reclaim.ai/tasks/new', '_blank')}
->
-  Save Tasks to Calendar with Reclaim.ai →
-</motion.button>
-
+        className="bg-indigo-600 text-white px-6 py-3 rounded-lg mt-8 transition-colors duration-300"
+        style={{ backgroundColor: '#5562EB' }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C2CAF9'}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5562EB'}
+        onClick={() => window.open('https://app.reclaim.ai/tasks/new', '_blank')}
+      >
+        Save Tasks to Calendar with Reclaim.ai →
+      </motion.button>
     </div>
   );
 }
