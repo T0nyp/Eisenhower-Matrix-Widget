@@ -160,7 +160,7 @@ export function App() {
         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5562EB'}
         onClick={() => window.open('https://app.reclaim.ai/tasks/new', '_blank')}
       >
-        Save Tasks to Calendar with Reclaim.ai →
+        Schedule Tasks to Calendar with Reclaim.ai →
       </motion.button>
     </div>
   );
