@@ -13,10 +13,17 @@ export function App() {
   }));
 
   const quadrantColors = {
-    'Important & Urgent': '#EE9AB2',
-    'Important & Not Urgent': '#FFC550',
-    'Not Important & Urgent': '#C2CAF9',
-    'Not Important & Not Urgent': '#EDEDED',
+    'Important & Urgent': '#14532D',          
+    'Important & Not Urgent': '#7AC17B',     
+    'Not Important & Urgent': '#5562EB',      
+    'Not Important & Not Urgent': '#C2CAF9',  
+  };
+
+  const quadrantFontColors = {
+    'Important & Urgent': '#FFFFFF',          
+    'Important & Not Urgent': '#333333',     
+    'Not Important & Urgent': '#FFFFFF',      
+    'Not Important & Not Urgent': '#333333',  
   };
 
   const quadrants = [
@@ -80,10 +87,12 @@ export function App() {
 
   return (
     <div 
-  className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6" 
-  style={{ backgroundColor: '#FCE7F3', fontFamily: 'Poppins, sans-serif', boxSizing: 'border-box' }}
->
-      <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: '#333333' }}>Build Your Own Eisenhower Matrix</h1>
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 py-6" 
+      style={{ backgroundColor: '#F3F6FF', fontFamily: 'Poppins, sans-serif', boxSizing: 'border-box' }}
+    >
+      <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: '#333333' }}>
+        Build Your Own Eisenhower Matrix
+      </h1>
 
       <div className="flex gap-2 mb-8 w-full max-w-2xl">
         <input
@@ -115,7 +124,7 @@ export function App() {
                   {...provided.droppableProps}
                   style={{ backgroundColor: quadrantColors[quad], minHeight: '220px' }}
                 >
-                  <h2 className="font-semibold text-lg mb-3 border-b pb-1" style={{ color: '#333333' }}>
+                  <h2 className="font-semibold text-lg mb-3 border-b pb-1" style={{ color: quadrantFontColors[quad] }}>
                     {quad}
                   </h2>
                   <div className="flex-grow overflow-auto">
@@ -133,12 +142,8 @@ export function App() {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                           >
-                            <span style={{ color: '#333333' }}>{task.content}</span>
-                            <button
-                              className="font-bold ml-2"
-                              style={{ color: '#5562EB' }}
-                              onClick={() => deleteTask(quad, task.id)}
-                            >
+                            <span style={{ color: quadrantFontColors[quad] }}>{task.content}</span>
+                            <button className="font-bold ml-2" style={{ color: '#5562EB' }} onClick={() => deleteTask(quad, task.id)}>
                               ×
                             </button>
                           </motion.div>
@@ -153,15 +158,19 @@ export function App() {
           ))}
         </div>
       </DragDropContext>
-      <motion.button
-        className="bg-indigo-600 text-white px-6 py-3 rounded-lg mt-8 transition-colors duration-300"
-        style={{ backgroundColor: '#5562EB' }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C2CAF9'}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5562EB'}
-        onClick={() => window.open('https://app.reclaim.ai/tasks/new', '_blank')}
+      <a
+        href="https://cta-service-cms2.hubspot.com/web-interactives/public/v1/track/redirect?encryptedPayload=AVxigLKyLjpsggTUVyNU8h7d9fUOvFj6mV%2FXQmCjaEXIUs2lDVUOWWPGaJhdAFnaJ%2BkwqpDHGQ6n96aL4PKVYTrFkyACjreKGKPft0LxRsO9qlArmukZMLM8aY6HrTxZzqKDbsMXB%2FgAMG5tPTp3Zm2E2gW%2FoXy2nZU9vFpzPXtCmJ%2Bf%2Bc%2FFT4eEG4c%3D&webInteractiveContentId=192661860514&portalId=22398006"
+        target="_blank"
+        rel="noopener"
+        className="mt-8 inline-block"
       >
-        Schedule Tasks to Calendar with Reclaim.ai →
-      </motion.button>
+        <img
+          alt="Create a free AI calendar account →"
+          loading="lazy"
+          src="https://no-cache.hubspot.com/cta/default/22398006/interactive-192661860514.png"
+          className="rounded transition-opacity duration-300 hover:opacity-80"
+        />
+      </a>
     </div>
   );
 }
