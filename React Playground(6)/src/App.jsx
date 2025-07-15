@@ -91,7 +91,7 @@ export function App() {
       style={{ backgroundColor: '#F3F6FF', fontFamily: 'Poppins, sans-serif', boxSizing: 'border-box' }}
     >
       <h1 className="text-4xl font-bold mb-8 text-center" style={{ color: '#333333' }}>
-        Build Your Own Eisenhower Matrix
+        Eisenhower Matrix Builder
       </h1>
 
       <div className="flex gap-2 mb-8 w-full max-w-2xl">
